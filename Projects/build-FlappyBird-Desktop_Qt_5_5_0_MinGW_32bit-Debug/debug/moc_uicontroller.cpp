@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../FlappyBird/uicontroller.h"
+#include "../../../../../../../../Desktop/R2D/Flappy_Bird/FlappyBird/uicontroller.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
