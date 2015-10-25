@@ -4,7 +4,7 @@
 /**
  * Reference to the declaration of this constructor
  * @brief MainScene::MainScene
- * @param paren
+ * @param parent
  */
 MainScene::MainScene(QObject *parent) : QGraphicsScene(parent)
 {

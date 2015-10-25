@@ -1,8 +1,9 @@
 #include "uicontroller.h"
 
 /**
- *Reference to the function declaration
- * @brief UIController::createAFlower
+ * Reference to the function declaration
+ * @brief UIController::UIController
+ * @param parent
  */
 UIController::UIController(QObject *parent) : QObject(parent)
 {
