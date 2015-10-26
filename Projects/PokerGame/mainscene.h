@@ -19,9 +19,6 @@ private:
     /*The Background Image Object*/
     QImage bgImage;
 
-    /*This graphics proxy object is used for referencing to the start button in the main scene*/
-    QGraphicsProxyWidget *stBtton;
-
 public:
 
     /**
@@ -39,6 +36,7 @@ protected:
      */
     void drawBackground(QPainter *painter, const QRectF &rect);
 
+private:
 
 signals:
 

@@ -25,7 +25,12 @@ public:
 
 signals:
 
+
+
 public slots:
+
+    /*This function asks PokerCardTable to start a new game*/
+    void startGame();
 };
 
 #endif // UICONTROLLER_H

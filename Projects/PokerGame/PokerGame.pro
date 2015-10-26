@@ -15,11 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     uicontroller.cpp \
-    mainscene.cpp
+    mainscene.cpp \
+    pokerhelper.cpp \
+    pokerpushbutton.cpp
 
 HEADERS  += mainwindow.h \
     uicontroller.h \
-    mainscene.h
+    mainscene.h \
+    pokerhelper.h \
+    pokerpushbutton.h
+
 
 FORMS    += mainwindow.ui
 

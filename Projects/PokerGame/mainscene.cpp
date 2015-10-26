@@ -21,6 +21,10 @@ MainScene::MainScene(QObject *parent) : QGraphicsScene(parent)
  */
 void MainScene::drawBackground(QPainter *painter, const QRectF &rect)
 {
-    painter->drawImage(rect,bgImage);
+    //Only drawing background for the main scene
+    painter->drawImage(sceneRect(),bgImage);
 }
+
+
+
 

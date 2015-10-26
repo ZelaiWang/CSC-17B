@@ -41,7 +41,7 @@ MainScene::MainScene(QObject *parent) : QGraphicsScene(parent)
  */
 void MainScene::drawBackground(QPainter *painter, const QRectF &rect)
 {
-    painter->drawImage(rect,bgImage);
+    painter->drawImage(sceneRect(),bgImage);
 }
 
 /**

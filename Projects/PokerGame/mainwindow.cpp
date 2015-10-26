@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //Connect the main scene to a view
     ui->graphicsView->setScene(mainScene);
 
+    //Place the Play button on the window
+    addPlayButton();
 }
 
 /**
@@ -36,4 +38,46 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+/**
+ * Reference to the function declaration
+ * @brief MainWindow::getStartButton
+ * @return
+ */
+void MainWindow::addPlayButton()
+{
+    if (playBtn == NULL){
+
+        playBtn = new PokerPushButton(this);
+
+        //Setting up geometry attributes
+        playBtn->setGeometry(QRect(PokerHelper::START_BUTTON_ICON_X,PokerHelper::START_BUTTON_ICON_Y,
+                                   PokerHelper::START_BUTTON_ICON_W,PokerHelper::START_BUTTON_ICON_H));
+
+        playBtn->setIcon(QIcon(SBI_FILE_NAME));
+
+        playBtn->setIconSize(QSize(PokerHelper::START_BUTTON_ICON_W,PokerHelper::START_BUTTON_ICON_H));
+
+        //Register with the Play button to receive its mouse clicked event
+        connect(playBtn, SIGNAL(clicked()),this, SLOT(processPlayClicked()));
+
+    }
+
+}
+
+/**
+ * Reference to the function declaration
+ * @brief MainWindow::processPlayClicked
+ */
+void MainWindow::processPlayClicked()
+{
+    //Clean up the play button before starting the game
+    playBtn->setVisible(false);
+    disconnect(playBtn, SIGNAL(clicked()),this, SLOT(processPlayClicked()));
+    delete playBtn;
+
+    //Notify the UIController for a game-started signal
+    emit startGame();
+
 }
