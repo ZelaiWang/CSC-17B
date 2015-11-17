@@ -1,0 +1,14 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/uicontroller.o
+./release/mainscene.o
+./release/pokerhelper.o
+./release/pokerpushbutton.o
+./release/pokercardtable.o
+./release/qrc_images.o
+./release/qrc_configuration.o
+./release/moc_mainwindow.o
+./release/moc_uicontroller.o
+./release/moc_pokerpushbutton.o
+);
