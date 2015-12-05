@@ -36,8 +36,8 @@ private:
     /*The maximum height of a flower in the scene*/
     const short MAX_FLOWER_HEIGHT = 200;
 
-    /*This scalar of the flapping bird in the scene*/
-    const float BIRD_PIC_SCALE = 0.2;
+    /*The scalar of the flapping bird in the scene*/
+    const float BIRD_PIC_SCALE = 0.15;
 
     /*The angle of the falling bird */
     const qreal FREE_FALL_ANGLE = 90;
@@ -78,6 +78,9 @@ private:
     /*Check if the bird is in the fly-up mode*/
     bool isFlyUp;
 
+    /*The current vertical position of the bird*/
+    qreal bXPos;
+
 public:
 
     /**
@@ -108,8 +111,10 @@ private:
     /*Creating a bird and putting it on the main scene*/
     void createABird(const QSize& birdSize);
 
-signals:
+    /*Check if the bird has just passed a column of flowers*/
+    void updateScore(QGraphicsPixmapItem *flower);
 
+signals:
 
 public slots:
 

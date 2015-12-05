@@ -31,6 +31,7 @@ MainScene::MainScene(QObject *parent) : QGraphicsScene(parent)
     /*At first the bird is not in either free-fall or fly-up mode*/
     isFreeFall = false;
     isFlyUp = false;
+
 }
 
 /**
@@ -104,6 +105,18 @@ void MainScene::createABird(const QSize& birdSize)
 
 /**
  * Reference to the declaration of this function
+ * @brief MainScene::updateScore
+ * @param flower
+ */
+void MainScene::updateScore(QGraphicsPixmapItem *flower)
+{
+    if (flower->pos().x() == bXPos){
+       static_cast<MainWindow*>(this->parent())->updateScore();
+    }
+}
+
+/**
+ * Reference to the declaration of this function
  * @brief MainScene::createFlowers
  */
 void MainScene::createFlowers()
@@ -125,8 +138,6 @@ void MainScene::createFlowers()
 
     addNewFlower(flower);
 
-    //Make scene look smooth
-    update();
 }
 
 /**
@@ -138,12 +149,14 @@ void MainScene::moveFlowers()
     for (int i = 0; i < flowers.size(); i++) {
         //Moving flowers from right to left
         flowers[i]->setPos(flowers[i]->pos().x() - 1,flowers[i]->pos().y());
+
+        //Update the score when the bird pass a column of flowers
+        updateScore(flowers[i]);
+
         //Remove the one that was out of sight
         deletePFlower(flowers[i]);
     }
 
-    //Make scene look smooth
-    update();
 }
 
 /**
@@ -157,8 +170,10 @@ void MainScene::play()
     createABird(QSize(bird->geometry().width()*BIRD_PIC_SCALE
                       ,bird->geometry().height()*BIRD_PIC_SCALE));
 
-    bird->setPos(sceneRect().bottomLeft().x() + bird->geometry().width()
-                 ,sceneRect().center().y());
+    /*Locating the vertical position of the bird for scoring*/
+    bXPos = sceneRect().bottomLeft().x() + bird->geometry().width();
+
+    bird->setPos(bXPos, sceneRect().center().y());
 }
 
 /**
@@ -190,9 +205,7 @@ void MainScene::freeFallBird()
 
     }
 
-    //Make scene look smooth
-    update();
-
+    //Check if the bird hits a flower
     checkForCollision();
 }
 
@@ -222,9 +235,7 @@ void MainScene::flyUpBird()
 
     }
 
-    //Make scene look smooth
-    update();
-
+    //Check if the bird hits a flower
     checkForCollision();
 }
 
@@ -259,6 +270,6 @@ void MainScene::checkForCollision()
 
         //Let the bird fall down completely
         bird->setPos(bird->pos().x(),sceneRect().bottom() - bird->geometry().height());
-        update();
+
     }
 }

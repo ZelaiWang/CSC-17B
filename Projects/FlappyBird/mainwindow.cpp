@@ -22,6 +22,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->graphicsView->setScene(mainScene);
 
+    //Setup the score panel before getting the game started
+    ui->lcdScore->setStyleSheet("QLCDNumber {color: blue;}");
+    ui->lcdScore->hide();
+
 }
 
 /*Reference to the function declaration*/
@@ -40,6 +44,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 }
 
 /*Reference to the function declaration*/
+void MainWindow::updateScore()
+{
+    ui->lcdScore->display(++crScore);
+}
+
+/*Reference to the function declaration*/
 void MainWindow::createFlowers()
 {
     mainScene->createFlowers();
@@ -48,6 +58,10 @@ void MainWindow::createFlowers()
 /*Reference to the function declaration*/
 void MainWindow::play()
 {
+    //Start scoring the game
+    ui->lcdScore->show();
+
+    //Ask the main scene to animate the its components
     mainScene->play();
 }
 

@@ -12,14 +12,6 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public:
-
-    /*The primary constructor of this window*/
-    explicit MainWindow(QWidget *parent = 0);
-
-    /*Main window destructor*/
-    ~MainWindow();
-
 private:
 
     /*Main UI*/
@@ -27,6 +19,17 @@ private:
 
     /*The fundamental graphics scene of the game*/
     MainScene *mainScene;
+
+    /*The current score of a game*/
+    int crScore = 0;
+
+public:
+
+    /*The primary constructor of this window*/
+    explicit MainWindow(QWidget *parent = 0);
+
+    /*Main window destructor*/
+    ~MainWindow();
 
 protected:
 
@@ -59,6 +62,9 @@ public:
 
      /*This function asks main scene to let the bird fly-up when the GUI thread is running*/
     void flyUpBird();
+
+    /*Increase the socre when the bird passes a column of flower*/
+    void updateScore();
 };
 
 #endif // MAINWINDOW_H
