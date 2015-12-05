@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMediaPlayer>
 #include "mainscene.h"
 
 namespace Ui {
@@ -14,6 +15,9 @@ class MainWindow : public QMainWindow
 
 private:
 
+    /*Path to the score sound track*/
+    const QString SCORE_S_FILE_NAME = "qrc:/SoundTracks/Score.mp3";
+
     /*Main UI*/
     Ui::MainWindow *ui;
 
@@ -22,6 +26,9 @@ private:
 
     /*The current score of a game*/
     int crScore = 0;
+
+    /*The media player of the scoring sound*/
+    QMediaPlayer *scoreMs;
 
 public:
 

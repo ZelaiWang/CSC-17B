@@ -34,6 +34,16 @@ UIController::UIController(QObject *parent) : QObject(parent)
 
     //Waiting for a user to start the game
     isGameStarted = false;
+
+    //Setup the multimedia players
+    bgMusic = new QMediaPlayer();
+    endMs = new QMediaPlayer();
+
+    bgMusic->setMedia(QUrl(BG_S_FILE_NAME));
+    endMs->setMedia(QUrl(GO_S_FILE_NAME));
+
+    connect(bgMusic,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChanged(QMediaPlayer::State)));
+
 }
 
 /**
@@ -68,6 +78,9 @@ void UIController::processSpaceKeyPress()
         //Put the bird in the right position to start the game
         mainWindow->play();
 
+        //Play the back ground music
+        bgMusic->play();
+
     }else { //Processing the bird movements
 
         //Stop free-fall for fly-up
@@ -96,6 +109,23 @@ void UIController::processCollision()
 
     //Stop handling key press events -> Stop fly up the bird
     disconnect(mainWindow,SIGNAL(pressSpaceKey()),this,SLOT(processSpaceKeyPress()));
+
+    //Process media affects
+    disconnect(bgMusic,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChanged(QMediaPlayer::State)));
+    bgMusic->stop();
+    endMs->play();
+}
+
+/**
+ * Reference to the function declaration
+ * @brief UIController::stateChanged
+ * @param newState
+ */
+void UIController::stateChanged(QMediaPlayer::State newState)
+{
+    if (newState == QMediaPlayer::StoppedState){
+        bgMusic->play(); // Replay the music
+    }
 }
 
 

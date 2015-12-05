@@ -26,6 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lcdScore->setStyleSheet("QLCDNumber {color: blue;}");
     ui->lcdScore->hide();
 
+    //Setup the scoring sound
+    scoreMs = new QMediaPlayer();
+    scoreMs->setMedia(QUrl(SCORE_S_FILE_NAME));
+
 }
 
 /*Reference to the function declaration*/
@@ -47,6 +51,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 void MainWindow::updateScore()
 {
     ui->lcdScore->display(++crScore);
+
+    scoreMs->play();
 }
 
 /*Reference to the function declaration*/

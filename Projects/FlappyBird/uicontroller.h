@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTimer>
 #include "mainwindow.h"
+#include <QMediaPlayer>
 
 /**
  * @brief The SceneController class
@@ -28,6 +29,12 @@ private:
     /*The default miliseconds for the bird fall down*/
     const int BIRD_FALLING_SPEED = 200;
 
+    /*Path to the back ground sound track*/
+    const QString BG_S_FILE_NAME = "qrc:/SoundTracks/BGround.mp3";
+
+    /*Path to the game-over sound track*/
+    const QString GO_S_FILE_NAME = "qrc:/SoundTracks/EndGame.mp3";
+
     /*The main window of Flappy Bird*/
     MainWindow *mainWindow;
 
@@ -39,6 +46,12 @@ private:
 
     /*This timer is used for controlling the gravity on the bird*/
     QTimer *gBirdTimer;
+
+    /*The media player of the back ground music*/
+    QMediaPlayer *bgMusic;
+
+    /*The media player of the game-over sound*/
+    QMediaPlayer *endMs;
 
     /*Identifying the current game mode*/
     bool isGameStarted;
@@ -59,6 +72,9 @@ public slots:
 
     /*This function is called when the bird collides with a flower*/
     void processCollision();
+
+    /*This function is called when the back ground music was stoped*/
+    void stateChanged(QMediaPlayer::State newState);
 };
 
 #endif // UICONTROLLER_H
