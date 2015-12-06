@@ -16,13 +16,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     mainscene.cpp \
-    uicontroller.cpp
+    uicontroller.cpp \
+    gamelevel.cpp \
+    difficultydialog.cpp
 
 HEADERS  += mainwindow.h \
     mainscene.h \
-    uicontroller.h
+    uicontroller.h \
+    gamelevel.h \
+    difficultydialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    difficultydialog.ui
 
 RESOURCES += \
     images.qrc \
