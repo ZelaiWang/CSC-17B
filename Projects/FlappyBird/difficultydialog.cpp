@@ -16,3 +16,9 @@ DifficultyDialog::~DifficultyDialog()
 {
     delete ui;
 }
+
+void DifficultyDialog::on_startButton_clicked()
+{
+    GameLevel::setLevelN(ui->dComboBox->currentText());
+    emit startGame();
+}

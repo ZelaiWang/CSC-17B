@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_UIController_t {
-    QByteArrayData data[8];
-    char stringdata0[108];
+    QByteArrayData data[9];
+    char stringdata0[118];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,13 +36,14 @@ QT_MOC_LITERAL(3, 28, 20), // "processSpaceKeyPress"
 QT_MOC_LITERAL(4, 49, 16), // "processCollision"
 QT_MOC_LITERAL(5, 66, 12), // "stateChanged"
 QT_MOC_LITERAL(6, 79, 19), // "QMediaPlayer::State"
-QT_MOC_LITERAL(7, 99, 8) // "newState"
+QT_MOC_LITERAL(7, 99, 8), // "newState"
+QT_MOC_LITERAL(8, 108, 9) // "startGame"
 
     },
     "UIController\0createFlowers\0\0"
     "processSpaceKeyPress\0processCollision\0"
     "stateChanged\0QMediaPlayer::State\0"
-    "newState"
+    "newState\0startGame"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +53,7 @@ static const uint qt_meta_data_UIController[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,16 +61,18 @@ static const uint qt_meta_data_UIController[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x0a /* Public */,
-       3,    0,   35,    2, 0x0a /* Public */,
-       4,    0,   36,    2, 0x0a /* Public */,
-       5,    1,   37,    2, 0x0a /* Public */,
+       1,    0,   39,    2, 0x0a /* Public */,
+       3,    0,   40,    2, 0x0a /* Public */,
+       4,    0,   41,    2, 0x0a /* Public */,
+       5,    1,   42,    2, 0x0a /* Public */,
+       8,    0,   45,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 6,    7,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -84,6 +87,7 @@ void UIController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->processSpaceKeyPress(); break;
         case 2: _t->processCollision(); break;
         case 3: _t->stateChanged((*reinterpret_cast< QMediaPlayer::State(*)>(_a[1]))); break;
+        case 4: _t->startGame(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -125,13 +129,13 @@ int UIController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

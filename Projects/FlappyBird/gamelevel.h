@@ -54,13 +54,19 @@ public:
 
     /*Auto generated getters and setters*/
     QString getLevelN() const;
-    void setLevelN(const QString &value);
+    static void setLevelN(const QString &value);
 
     int getId() const;
-    void setId(int value);
+    static void setId(int value);
 
-
+    /*The singleton design method*/
     static GameLevel getInstance();
+
+    /*This function returns the bird picture scalar base on the current game difficulty*/
+    static float getBirdPicScalar();
+
+    /*This function returns the flower speed base on the current game difficulty*/
+    static int getFlowerSpeed();
 };
 
 #endif // GAMELEVEL_H

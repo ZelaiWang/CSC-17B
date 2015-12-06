@@ -1,0 +1,13 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/mainscene.o
+./release/uicontroller.o
+./release/gamelevel.o
+./release/difficultydialog.o
+./release/qrc_images.o
+./release/qrc_soundtracks.o
+./release/moc_mainwindow.o
+./release/moc_uicontroller.o
+./release/moc_difficultydialog.o
+);

@@ -26,10 +26,10 @@ GameLevel GameLevel::gLevel;
 GameLevel const GameLevel::levels[] = { EASY, MEDIUM, HARD};
 
 /*Reference to the constant declaration*/
-const float GameLevel::BIRD_PIC_SCALARS[] = {0.15, 0.16, 0.17};
+const float GameLevel::BIRD_PIC_SCALARS[] = {0.15, 0.18, 0.2};
 
 /*Reference to the constant declaration*/
-const int GameLevel::FLOWER_SPEEDS[] = {15, 12, 10};
+const int GameLevel::FLOWER_SPEEDS[] = {15, 10, 5};
 
 /**
  * @brief GameLevel::getLevelN
@@ -46,11 +46,10 @@ QString GameLevel::getLevelN() const
  */
 void GameLevel::setLevelN(const QString &value)
 {
-
     for (int i = 0; i < NUMBER_OF_LEVEL; ++i) {
         if (value == levels[i].levelN){
-            this->levelN = value;
-            this->id = levels[i].id;
+            gLevel.levelN = value;
+            gLevel.id = levels[i].id;
             return;
         }
     }
@@ -75,8 +74,8 @@ void GameLevel::setId(int value)
 
     for (int i = 0; i < NUMBER_OF_LEVEL; ++i) {
         if (value == levels[i].id){
-            this->levelN = levels[i].levelN;
-            this->id = value;
+            gLevel.levelN = levels[i].levelN;
+            gLevel.id = value;
             return;
         }
     }
@@ -91,6 +90,24 @@ void GameLevel::setId(int value)
 GameLevel GameLevel::getInstance()
 {
     return gLevel;
+}
+
+/**
+ * @brief GameLevel::getBirdPicScalar
+ * @return
+ */
+float GameLevel::getBirdPicScalar()
+{
+    return BIRD_PIC_SCALARS[gLevel.getId()];
+}
+
+/**
+ * @brief GameLevel::getFlowerSpeed
+ * @return
+ */
+int GameLevel::getFlowerSpeed()
+{
+    return FLOWER_SPEEDS[gLevel.getId()];
 }
 
 /**

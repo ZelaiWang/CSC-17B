@@ -111,7 +111,7 @@ void MainScene::createABird(const QSize& birdSize)
 void MainScene::updateScore(QGraphicsPixmapItem *flower)
 {
     if (flower->pos().x() == bXPos){
-       static_cast<MainWindow*>(this->parent())->updateScore();
+        static_cast<MainWindow*>(this->parent())->updateScore();
     }
 }
 
@@ -167,8 +167,8 @@ void MainScene::play()
 {
     //Creating a small bird after deleting the old huge one
     removeItem(bird);
-    createABird(QSize(bird->geometry().width()*BIRD_PIC_SCALE
-                      ,bird->geometry().height()*BIRD_PIC_SCALE));
+    createABird(QSize(bird->geometry().width()*GameLevel::getInstance().getBirdPicScalar()
+                      ,bird->geometry().height()*GameLevel::getInstance().getBirdPicScalar()));
 
     /*Locating the vertical position of the bird for scoring*/
     bXPos = sceneRect().bottomLeft().x() + bird->geometry().width();

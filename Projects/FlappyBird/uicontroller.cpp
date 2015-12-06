@@ -11,6 +11,9 @@ UIController::UIController(QObject *parent) : QObject(parent)
     mainWindow = new MainWindow();
     mainWindow->show();
 
+    //Intialized the game start menu
+    dDialog = new DifficultyDialog(mainWindow);
+
     //Seeding the value for a random
     qsrand(time(NULL));
 
@@ -32,6 +35,9 @@ UIController::UIController(QObject *parent) : QObject(parent)
     //Getting a notify from the main window for a collision
     connect(mainWindow,SIGNAL(processCollision()),this,SLOT(processCollision()));
 
+    //Register with the difficulty dialog to receive a start-game signal
+    connect(dDialog,SIGNAL(startGame()),this,SLOT(startGame()));
+
     //Waiting for a user to start the game
     isGameStarted = false;
 
@@ -42,6 +48,7 @@ UIController::UIController(QObject *parent) : QObject(parent)
     bgMusic->setMedia(QUrl(BG_S_FILE_NAME));
     endMs->setMedia(QUrl(GO_S_FILE_NAME));
 
+    //Using SIGNAL-SLOT to replay the back ground music
     connect(bgMusic,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChanged(QMediaPlayer::State)));
 
 }
@@ -68,15 +75,8 @@ void UIController::processSpaceKeyPress()
 
         isGameStarted = true;
 
-        //Let flowers appear and move in the scene
-        cFlowerTimer->start(MIN_TIME_IN_MIL);
-        mFlowerTimer->start(FLOWER_DEFAULT_SPEED);
-
-        //Let the bird free fall
-        gBirdTimer->start(BIRD_FALLING_SPEED);
-
-        //Put the bird in the right position to start the game
-        mainWindow->play();
+        //Populate the difficulty dialog UI
+        dDialog->show();
 
         //Play the back ground music
         bgMusic->play();
@@ -126,6 +126,27 @@ void UIController::stateChanged(QMediaPlayer::State newState)
     if (newState == QMediaPlayer::StoppedState){
         bgMusic->play(); // Replay the music
     }
+}
+
+/**
+ * Reference to the function declaration
+ * @brief UIController::startGame
+ */
+void UIController::startGame()
+{
+    //Hide the difficulty dialog
+    dDialog->hide();
+
+    //Let flowers appear and move in the scene
+    cFlowerTimer->start(MIN_TIME_IN_MIL);
+    mFlowerTimer->start(GameLevel::getInstance().getFlowerSpeed());
+
+    //Let the bird free fall
+    gBirdTimer->start(BIRD_FALLING_SPEED);
+
+    //Put the bird in the right position to start the game
+    mainWindow->play();
+
 }
 
 

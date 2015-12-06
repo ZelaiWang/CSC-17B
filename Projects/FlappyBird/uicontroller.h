@@ -5,6 +5,7 @@
 #include <QTimer>
 #include "mainwindow.h"
 #include <QMediaPlayer>
+#include "difficultydialog.h"
 
 /**
  * @brief The SceneController class
@@ -23,9 +24,6 @@ private:
     /*The maximum miliseconds for creating flowers*/
     const int MAX_TIME_IN_MIL = 5000;
 
-    /*The default miliseconds for moving flowers*/
-    const int FLOWER_DEFAULT_SPEED = 15;
-
     /*The default miliseconds for the bird fall down*/
     const int BIRD_FALLING_SPEED = 200;
 
@@ -37,6 +35,9 @@ private:
 
     /*The main window of Flappy Bird*/
     MainWindow *mainWindow;
+
+    /*The start menu of a game*/
+    DifficultyDialog * dDialog;
 
     /*This timer is used for controlling the creation of flowers*/
     QTimer *cFlowerTimer;
@@ -75,6 +76,9 @@ public slots:
 
     /*This function is called when the back ground music was stoped*/
     void stateChanged(QMediaPlayer::State newState);
+
+    /*This function is called after the user has chosen the difficulty */
+    void startGame();
 };
 
 #endif // UICONTROLLER_H
