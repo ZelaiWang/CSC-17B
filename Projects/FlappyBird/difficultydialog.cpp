@@ -1,6 +1,10 @@
 #include "difficultydialog.h"
 #include "ui_difficultydialog.h"
 
+/**
+ * @brief DifficultyDialog::DifficultyDialog
+ * @param parent
+ */
 DifficultyDialog::DifficultyDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DifficultyDialog)
@@ -12,11 +16,18 @@ DifficultyDialog::DifficultyDialog(QWidget *parent) :
     ui->dComboBox->addItem(GameLevel::HARD.getLevelN());
 }
 
+/**
+ * @brief DifficultyDialog::~DifficultyDialog
+ */
 DifficultyDialog::~DifficultyDialog()
 {
     delete ui;
 }
 
+
+/**
+ * @brief DifficultyDialog::on_startButton_clicked
+ */
 void DifficultyDialog::on_startButton_clicked()
 {
     GameLevel::setLevelN(ui->dComboBox->currentText());

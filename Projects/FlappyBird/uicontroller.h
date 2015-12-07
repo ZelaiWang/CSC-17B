@@ -6,6 +6,7 @@
 #include "mainwindow.h"
 #include <QMediaPlayer>
 #include "difficultydialog.h"
+#include "godialog.h"
 
 /**
  * @brief The SceneController class
@@ -37,7 +38,10 @@ private:
     MainWindow *mainWindow;
 
     /*The start menu of a game*/
-    DifficultyDialog * dDialog;
+    DifficultyDialog *dDialog;
+
+    /*The game-over dialog*/
+    GODialog *gODialog;
 
     /*This timer is used for controlling the creation of flowers*/
     QTimer *cFlowerTimer;
@@ -79,6 +83,15 @@ public slots:
 
     /*This function is called after the user has chosen the difficulty */
     void startGame();
+
+    /*This function is called after the user has chosen to restart the game */
+    void restart();
+
+private:
+
+    /*Connect all the subsystems to this UI controller*/
+    void connectSystems();
+
 };
 
 #endif // UICONTROLLER_H

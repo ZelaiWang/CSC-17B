@@ -11,8 +11,11 @@ UIController::UIController(QObject *parent) : QObject(parent)
     mainWindow = new MainWindow();
     mainWindow->show();
 
-    //Intialized the game start menu
+    //Intialized the start game menu
     dDialog = new DifficultyDialog(mainWindow);
+
+    //Intialized the end game menu
+    gODialog = new GODialog(mainWindow);
 
     //Seeding the value for a random
     qsrand(time(NULL));
@@ -21,22 +24,6 @@ UIController::UIController(QObject *parent) : QObject(parent)
     cFlowerTimer = new QTimer(this);
     mFlowerTimer = new QTimer(this);
     gBirdTimer = new QTimer(this);
-
-    //Connecting timer to the behaviors of flowers in the main scene
-    connect(cFlowerTimer,SIGNAL(timeout()),this,SLOT(createFlowers()));
-    connect(mFlowerTimer,SIGNAL(timeout()),mainWindow,SLOT(moveFlowers()));
-
-    //Connecting timer to the behaviors of the bird
-    connect(gBirdTimer,SIGNAL(timeout()),mainWindow,SLOT(freeFallBird()));
-
-    //Getting connect to the key event of the main window
-    connect(mainWindow,SIGNAL(pressSpaceKey()),this,SLOT(processSpaceKeyPress()));
-
-    //Getting a notify from the main window for a collision
-    connect(mainWindow,SIGNAL(processCollision()),this,SLOT(processCollision()));
-
-    //Register with the difficulty dialog to receive a start-game signal
-    connect(dDialog,SIGNAL(startGame()),this,SLOT(startGame()));
 
     //Waiting for a user to start the game
     isGameStarted = false;
@@ -48,9 +35,8 @@ UIController::UIController(QObject *parent) : QObject(parent)
     bgMusic->setMedia(QUrl(BG_S_FILE_NAME));
     endMs->setMedia(QUrl(GO_S_FILE_NAME));
 
-    //Using SIGNAL-SLOT to replay the back ground music
-    connect(bgMusic,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChanged(QMediaPlayer::State)));
-
+    //Connect all the components together
+    connectSystems();
 }
 
 /**
@@ -78,6 +64,9 @@ void UIController::processSpaceKeyPress()
         //Populate the difficulty dialog UI
         dDialog->show();
 
+
+        //Using SIGNAL-SLOT to replay the back ground music
+        connect(bgMusic,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChanged(QMediaPlayer::State)));
         //Play the back ground music
         bgMusic->play();
 
@@ -107,13 +96,14 @@ void UIController::processCollision()
     //Stop letting the bird fall down
     gBirdTimer->stop();
 
-    //Stop handling key press events -> Stop fly up the bird
-    disconnect(mainWindow,SIGNAL(pressSpaceKey()),this,SLOT(processSpaceKeyPress()));
-
-    //Process media affects
+    /*Process media affects*/
+    //Stop using SIGNAL-SLOT to replay the back ground music
     disconnect(bgMusic,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChanged(QMediaPlayer::State)));
     bgMusic->stop();
     endMs->play();
+
+    //Populate the game-over UI
+    gODialog->populateUI(mainWindow->getCrScore());
 }
 
 /**
@@ -146,6 +136,42 @@ void UIController::startGame()
 
     //Put the bird in the right position to start the game
     mainWindow->play();
+
+}
+
+/**
+ * Reference to the function declaration
+ * @brief UIController::restart
+ */
+void UIController::restart()
+{
+    mainWindow->restartUI();
+    isGameStarted = false;
+ }
+
+/**
+ * @brief UIController::connectSystems
+ */
+void UIController::connectSystems()
+{
+    //Connecting timer to the behaviors of flowers in the main scene
+    connect(cFlowerTimer,SIGNAL(timeout()),this,SLOT(createFlowers()));
+    connect(mFlowerTimer,SIGNAL(timeout()),mainWindow,SLOT(moveFlowers()));
+
+    //Connecting timer to the behaviors of the bird
+    connect(gBirdTimer,SIGNAL(timeout()),mainWindow,SLOT(freeFallBird()));
+
+    //Getting connect to the key event of the main window
+    connect(mainWindow,SIGNAL(pressSpaceKey()),this,SLOT(processSpaceKeyPress()));
+
+    //Getting a notify from the main window for a collision
+    connect(mainWindow,SIGNAL(processCollision()),this,SLOT(processCollision()));
+
+    //Register with the difficulty dialog to receive a start-game signal
+    connect(dDialog,SIGNAL(startGame()),this,SLOT(startGame()));
+
+    //Register with the game-over dialog to receive a restart-game signal
+    connect(gODialog,SIGNAL(restart()),this,SLOT(restart()));
 
 }
 

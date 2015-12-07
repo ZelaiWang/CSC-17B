@@ -2,6 +2,26 @@
 #include "ui_mainwindow.h"
 
 /*Reference to the function declaration*/
+int MainWindow::getCrScore() const
+{
+    return crScore;
+}
+
+/**
+ * @brief MainWindow::restartUI
+ */
+void MainWindow::restartUI()
+{
+    //Ask main scene to reset its components
+    mainScene->restartScene();
+
+    //Reset the score
+    crScore = 0;
+    ui->lcdScore->display(crScore);
+    ui->lcdScore->hide();
+}
+
+/*Reference to the function declaration*/
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)

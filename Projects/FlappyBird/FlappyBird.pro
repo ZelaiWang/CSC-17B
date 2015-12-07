@@ -18,16 +18,19 @@ SOURCES += main.cpp\
     mainscene.cpp \
     uicontroller.cpp \
     gamelevel.cpp \
-    difficultydialog.cpp
+    difficultydialog.cpp \
+    godialog.cpp
 
 HEADERS  += mainwindow.h \
     mainscene.h \
     uicontroller.h \
     gamelevel.h \
-    difficultydialog.h
+    difficultydialog.h \
+    godialog.h
 
 FORMS    += mainwindow.ui \
-    difficultydialog.ui
+    difficultydialog.ui \
+    godialog.ui
 
 RESOURCES += \
     images.qrc \

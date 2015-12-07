@@ -5,9 +5,11 @@ INPUT(
 ./release/uicontroller.o
 ./release/gamelevel.o
 ./release/difficultydialog.o
+./release/godialog.o
 ./release/qrc_images.o
 ./release/qrc_soundtracks.o
 ./release/moc_mainwindow.o
 ./release/moc_uicontroller.o
 ./release/moc_difficultydialog.o
+./release/moc_godialog.o
 );

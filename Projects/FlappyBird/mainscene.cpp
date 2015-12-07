@@ -21,8 +21,8 @@ MainScene::MainScene(QObject *parent) : QGraphicsScene(parent)
     /*Loading a bottom flower picture into the equivalent image object*/
     downFlowerIm.load(DF_FILE_NAME);
 
-    /*Loading a bird picture into the equivalent image object*/
-    birdImage.load(FB_FILE_NAME);
+    /*Loading a bird movie into the equivalent movie object*/
+    birdMovie = new QMovie(FB_FILE_NAME);
 
     /*Creating a huge bird before the game is started*/
     createABird(QSize(static_cast<MainWindow*>(this->parent())->geometry().width()
@@ -86,11 +86,11 @@ void MainScene::deletePFlower(QGraphicsPixmapItem *flower)
  */
 void MainScene::createABird(const QSize& birdSize)
 {
-    //Loading animated bird gif to a label
-    birdMovie = new QMovie(FB_FILE_NAME);
+    //This label contains the animated bird gif file
     QLabel *birdLabel = new QLabel();
 
-    //Let the bird image occupy the whole scene at the beginning
+    //Let the bird image occupy the area being proportional to birdSize
+    birdMovie->stop();
     birdMovie->setScaledSize(birdSize);
     birdLabel->setMovie(birdMovie);
 
@@ -265,11 +265,33 @@ void MainScene::checkForCollision()
 {
     if (hasCollision()){
 
-        //Notify the UIController through the Main Window
-        emit static_cast<MainWindow*>(this->parent())->processCollision();
-
         //Let the bird fall down completely
         bird->setPos(bird->pos().x(),sceneRect().bottom() - bird->geometry().height());
 
+        //Notify the UIController through the Main Window
+        emit static_cast<MainWindow*>(this->parent())->processCollision();
+
     }
+}
+
+/**
+ * @brief MainScene::restartScene
+ */
+void MainScene::restartScene()
+{
+    //Clean up all the flowers and the bird
+    QVector<QGraphicsPixmapItem *>::Iterator iFlower;
+    for (iFlower = flowers.begin(); iFlower != flowers.end(); iFlower++){
+        removeItem(*iFlower);
+    }
+    flowers.clear();
+    removeItem(bird);
+
+    /*Creating a huge bird before the game is started*/
+    createABird(QSize(static_cast<MainWindow*>(this->parent())->geometry().width()
+                      ,static_cast<MainWindow*>(this->parent())->geometry().height()));
+
+    /*At first the bird is not in either free-fall or fly-up mode*/
+    isFreeFall = false;
+    isFlyUp = false;
 }

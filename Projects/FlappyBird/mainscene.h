@@ -55,9 +55,6 @@ private:
     /*The Downward Flower Image Object*/
     QImage downFlowerIm;
 
-    /*The Flapping Bird Image Object*/
-    QImage birdImage;
-
     /*This object helps to create flowers in the scene*/
     QGraphicsPixmapItem *flower;
 
@@ -138,6 +135,8 @@ public:
     /*This function will notify the main window in case of a collision happens*/
     void checkForCollision();
 
+    /*Clean-up all components to prepare for a new game*/
+    void restartScene();
 };
 
 #endif // MAINSCENE_H

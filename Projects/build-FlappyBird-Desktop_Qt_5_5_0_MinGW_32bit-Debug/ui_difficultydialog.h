@@ -73,7 +73,7 @@ public:
 
     void retranslateUi(QDialog *DifficultyDialog)
     {
-        DifficultyDialog->setWindowTitle(QApplication::translate("DifficultyDialog", "Dialog", 0));
+        DifficultyDialog->setWindowTitle(QApplication::translate("DifficultyDialog", "StartMenu", 0));
         titleLabel->setText(QApplication::translate("DifficultyDialog", "Flappy Bird", 0));
         difficultyLabel->setText(QApplication::translate("DifficultyDialog", "<html><head/><body><p align=\"center\">Difficulty:</p></body></html>", 0));
         dComboBox->setCurrentText(QString());

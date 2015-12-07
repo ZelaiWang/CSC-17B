@@ -72,6 +72,12 @@ public:
 
     /*Increase the socre when the bird passes a column of flower*/
     void updateScore();
+
+    /*The auto-generated getter of the current score*/
+    int getCrScore() const;
+
+    /*Clean up all the components to prepare for a new game*/
+    void restartUI();
 };
 
 #endif // MAINWINDOW_H

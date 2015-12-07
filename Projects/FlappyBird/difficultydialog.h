@@ -16,14 +16,18 @@ private:
     Ui::DifficultyDialog *ui;
 
 public:
+    //The main constructor
     explicit DifficultyDialog(QWidget *parent = 0);
+
+    //The main destructor
     ~DifficultyDialog();
 
 signals:
-
+    //The start-game signal
     void startGame();
 
 private slots:
+    //Start button handler
     void on_startButton_clicked();
 
 
