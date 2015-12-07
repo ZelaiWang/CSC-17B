@@ -18,11 +18,8 @@ int main(int argc, char *argv[]){
     else{
         qDebug() << "Connected!";
         QSqlQuery query;
-        query.exec("SELECT name FROM tester");
-        while (query.next()) {
-            QString name = query.value(0).toString();
-            qDebug() << "name:" << name;
-        }
+        query.exec("INSERT INTO FlappingBird (UserName, Score)"
+                   "VALUES ('Hao','99')");
         connection.db.close();
         return 0;
     }

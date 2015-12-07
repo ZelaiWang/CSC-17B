@@ -6,6 +6,7 @@ INPUT(
 ./debug/gamelevel.o
 ./debug/difficultydialog.o
 ./debug/godialog.o
+./debug/fbhelper.o
 ./debug/qrc_images.o
 ./debug/qrc_soundtracks.o
 ./debug/moc_mainwindow.o

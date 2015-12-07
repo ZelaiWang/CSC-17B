@@ -6,6 +6,7 @@ INPUT(
 ./release/gamelevel.o
 ./release/difficultydialog.o
 ./release/godialog.o
+./release/fbhelper.o
 ./release/qrc_images.o
 ./release/qrc_soundtracks.o
 ./release/moc_mainwindow.o

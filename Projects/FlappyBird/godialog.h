@@ -2,6 +2,8 @@
 #define GODIALOG_H
 
 #include <QDialog>
+#include "fbhelper.h"
+#include <QDebug>
 
 namespace Ui {
 class GODialog;

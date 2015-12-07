@@ -53,5 +53,12 @@ void GODialog::on_restartButton_clicked()
 void GODialog::on_sRestartButton_clicked()
 {
     hide();
+
+    if (FBHelper::save(ui->nameLineEdit->text(),ui->scoreDisplay->value())){
+        qDebug() << "The result was saved.";
+    }else{
+        qDebug() << "The result cannot be saved !";
+    }
+
     emit restart();
 }

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui \
+QT       += core gui sql \
         multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -19,14 +19,16 @@ SOURCES += main.cpp\
     uicontroller.cpp \
     gamelevel.cpp \
     difficultydialog.cpp \
-    godialog.cpp
+    godialog.cpp \
+    fbhelper.cpp
 
 HEADERS  += mainwindow.h \
     mainscene.h \
     uicontroller.h \
     gamelevel.h \
     difficultydialog.h \
-    godialog.h
+    godialog.h \
+    fbhelper.h
 
 FORMS    += mainwindow.ui \
     difficultydialog.ui \
