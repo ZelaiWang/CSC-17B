@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QGraphicsProxyWidget>
 #include <gamelevel.h>
+#include <cmath>
 
 /**
  * @brief The MainScene class

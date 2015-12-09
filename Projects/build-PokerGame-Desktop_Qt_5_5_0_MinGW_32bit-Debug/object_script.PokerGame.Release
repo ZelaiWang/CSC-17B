@@ -8,6 +8,7 @@ INPUT(
 ./release/pokercardtable.o
 ./release/bankroll.o
 ./release/qrc_images.o
+./release/qrc_soundtracks.o
 ./release/moc_mainwindow.o
 ./release/moc_uicontroller.o
 ./release/moc_pokerpushbutton.o

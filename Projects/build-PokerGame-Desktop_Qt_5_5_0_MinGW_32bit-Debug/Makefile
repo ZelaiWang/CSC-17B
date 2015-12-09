@@ -189,8 +189,10 @@ Makefile: ../../../privatehub-csc17b/PokerGame/PokerGame.pro C:/Qt/5.5/mingw492_
 		C:/Qt/5.5/mingw492_32/mkspecs/features/lex.prf \
 		../../../privatehub-csc17b/PokerGame/PokerGame.pro \
 		C:/Qt/5.5/mingw492_32/lib/qtmaind.prl \
+		C:/Qt/5.5/mingw492_32/lib/Qt5Multimedia.prl \
 		C:/Qt/5.5/mingw492_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.5/mingw492_32/lib/Qt5Gui.prl \
+		C:/Qt/5.5/mingw492_32/lib/Qt5Network.prl \
 		C:/Qt/5.5/mingw492_32/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-g++ CONFIG+=debug -o Makefile ../../../privatehub-csc17b/PokerGame/PokerGame.pro
 C:/Qt/5.5/mingw492_32/mkspecs/features/spec_pre.prf:
@@ -323,8 +325,10 @@ C:/Qt/5.5/mingw492_32/mkspecs/features/yacc.prf:
 C:/Qt/5.5/mingw492_32/mkspecs/features/lex.prf:
 ../../../privatehub-csc17b/PokerGame/PokerGame.pro:
 C:/Qt/5.5/mingw492_32/lib/qtmaind.prl:
+C:/Qt/5.5/mingw492_32/lib/Qt5Multimedia.prl:
 C:/Qt/5.5/mingw492_32/lib/Qt5Widgets.prl:
 C:/Qt/5.5/mingw492_32/lib/Qt5Gui.prl:
+C:/Qt/5.5/mingw492_32/lib/Qt5Network.prl:
 C:/Qt/5.5/mingw492_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ CONFIG+=debug -o Makefile ../../../privatehub-csc17b/PokerGame/PokerGame.pro

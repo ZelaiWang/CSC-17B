@@ -125,7 +125,7 @@ void MainScene::createFlowers()
     //Creating a top flower
     flower = new QGraphicsPixmapItem(QPixmap::fromImage(upFlowerIm.scaledToHeight(getHeightScale())));
 
-    flower->setPos(sceneRect().bottomRight().x() - flower->sceneBoundingRect().width()
+    flower->setPos(sceneRect().bottomRight().x() - fmod(qrand(),flower->sceneBoundingRect().height())
                    , sceneRect().bottom() - flower->sceneBoundingRect().height());
 
     addNewFlower(flower);
@@ -133,7 +133,7 @@ void MainScene::createFlowers()
     //Creating a bottom flower
     flower = new QGraphicsPixmapItem(QPixmap::fromImage(downFlowerIm.scaledToHeight(getHeightScale())));
 
-    flower->setPos(sceneRect().topRight().x() - flower->sceneBoundingRect().width()
+    flower->setPos(sceneRect().topRight().x() - fmod(qrand(),flower->sceneBoundingRect().height())
                    , sceneRect().top());
 
     addNewFlower(flower);
