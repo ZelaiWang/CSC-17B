@@ -848,12 +848,6 @@ release/moc_uicontroller.cpp: C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
 		../FlappyBird/godialog.h \
 		../FlappyBird/fbhelper.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
@@ -1073,12 +1067,6 @@ release/moc_godialog.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		../FlappyBird/fbhelper.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
@@ -1086,8 +1074,10 @@ release/moc_godialog.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		../FlappyBird/godialog.h
 	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/HaoHuynh/Documents/RCC/CSC-17B/repo/CSC-17B/Projects/FlappyBird -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtMultimedia -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtNetwork -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ../FlappyBird/godialog.h -o release/moc_godialog.cpp
 
-release/moc_fbhelper.cpp: C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
+release/moc_fbhelper.cpp: C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qiodevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qglobal.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qconfig.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qfeatures.h \
@@ -1116,24 +1106,16 @@ release/moc_fbhelper.cpp: C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qglobalstatic.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qmutex.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qnumeric.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobject.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qchar.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qbytearray.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qrefcount.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
-		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
-		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qiodevice.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qobject.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qlist.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qalgorithms.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qiterator.h \
@@ -1537,12 +1519,6 @@ release/main.o: ../FlappyBird/main.cpp ../FlappyBird/uicontroller.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
 		../FlappyBird/godialog.h \
 		../FlappyBird/fbhelper.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
@@ -2613,12 +2589,6 @@ release/uicontroller.o: ../FlappyBird/uicontroller.cpp ../FlappyBird/uicontrolle
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
 		../FlappyBird/godialog.h \
 		../FlappyBird/fbhelper.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
@@ -2923,12 +2893,6 @@ release/godialog.o: ../FlappyBird/godialog.cpp ../FlappyBird/godialog.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		../FlappyBird/fbhelper.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
 		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
@@ -2982,8 +2946,10 @@ release/godialog.o: ../FlappyBird/godialog.cpp ../FlappyBird/godialog.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/godialog.o ../FlappyBird/godialog.cpp
 
 release/fbhelper.o: ../FlappyBird/fbhelper.cpp ../FlappyBird/fbhelper.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSql \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsql.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qiodevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qglobal.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qconfig.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qfeatures.h \
@@ -3012,24 +2978,16 @@ release/fbhelper.o: ../FlappyBird/fbhelper.cpp ../FlappyBird/fbhelper.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qglobalstatic.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qmutex.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qnumeric.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlQuery \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqlquery.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobject.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qchar.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qbytearray.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qrefcount.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/5.5/mingw492_32/include/QtSql/QSqlDatabase \
-		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
-		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qiodevice.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qobject.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qlist.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qalgorithms.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qiterator.h \
@@ -3055,7 +3013,176 @@ release/fbhelper.o: ../FlappyBird/fbhelper.cpp ../FlappyBird/fbhelper.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qvector.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qpoint.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qset.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qcontiguouscache.h
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QtNetwork \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QtNetworkDepends \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QtCore \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QtCoreDepends \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractanimation.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qanimationgroup.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qparallelanimationgroup.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qpauseanimation.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qpropertyanimation.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qeasingcurve.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtextcodec.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qendian.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qlibraryinfo.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qbuffer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qdatastream.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qdir.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfileinfo.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfile.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qdiriterator.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfileselector.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QStringList \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfilesystemwatcher.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qlockfile.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qloggingcategory.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qprocess.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qresource.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsavefile.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsettings.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstandardpaths.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstorageinfo.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtemporarydir.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QScopedPointer \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtemporaryfile.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qurl.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractproxymodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsortfilterproxymodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstringlistmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qjsonarray.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qjsondocument.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qjsonobject.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractnativeeventfilter.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmath.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmetaobject.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmimedata.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qobjectcleanuphandler.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qpointer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsharedmemory.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsignalmapper.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsocketnotifier.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsystemsemaphore.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtimer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtranslator.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qwineventnotifier.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmimedatabase.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmimetype.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qlibrary.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qplugin.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qpluginloader.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/quuid.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractstate.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstracttransition.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qeventtransition.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfinalstate.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qhistorystate.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsignaltransition.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstate.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstatemachine.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qexception.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfuture.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfutureinterface.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qrunnable.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qresultstore.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfuturesynchronizer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfuturewatcher.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qreadwritelock.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsemaphore.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qthread.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qthreadpool.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qthreadstorage.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qwaitcondition.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydataops.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydatapointer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qbitarray.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qbytearraymatcher.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcache.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcollator.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcommandlineoption.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcommandlineparser.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qelapsedtimer.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qline.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qlinkedlist.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmargins.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmessageauthenticationcode.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qrect.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsize.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qscopedvaluerollback.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstack.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtextboundaryfinder.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtimeline.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtimezone.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qxmlstream.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtcoreversion.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractnetworkcache.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QSharedDataPointer \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QUrl \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QVariant \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qhttpmultipart.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QByteArray \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QIODevice \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkaccessmanager.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QFlags \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QtGlobal \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QMetaType \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkcookie.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QList \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkcookiejar.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkdiskcache.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkreply.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QNetworkAccessManager \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkconfigmanager.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkconfiguration.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworksession.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkinterface.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qhostaddress.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qauthenticator.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qdnslookup.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qhostinfo.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qnetworkproxy.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qlocalserver.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qlocalsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpserver.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qudpsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslcertificateextension.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslcipher.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslellipticcurve.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QHash \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qsslkey.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtnetworkversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/fbhelper.o ../FlappyBird/fbhelper.cpp
 
 release/qrc_images.o: release/qrc_images.cpp 
