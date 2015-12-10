@@ -13,4 +13,5 @@ INPUT(
 ./release/moc_uicontroller.o
 ./release/moc_difficultydialog.o
 ./release/moc_godialog.o
+./release/moc_fbhelper.o
 );

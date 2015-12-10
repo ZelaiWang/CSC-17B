@@ -19,6 +19,8 @@ class GODialog : public QDialog
 private:
     Ui::GODialog *ui;
 
+    FBHelper* fbHelper;
+
 public:
     //The main constructor
     explicit GODialog(QWidget *parent = 0);

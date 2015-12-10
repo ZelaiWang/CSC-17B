@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core sql
 QT       += network
 QT       += widgets
 QT       +=gui

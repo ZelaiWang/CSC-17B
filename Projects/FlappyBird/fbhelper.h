@@ -1,33 +1,48 @@
 #ifndef FBHELPER_H
 #define FBHELPER_H
 
-#include <QSql>
-#include <QSqlQuery>
-#include <QSqlDatabase>
 #include <QTcpSocket>
 
 /*The Flapping Bird Helper class*/
-class FBHelper
+class FBHelper : public QObject
 {
-
-private:
-    /* A simple MySQL database connection*/
-    typedef struct CONNECTION{
-        QSqlDatabase db;
-        bool connected;
-    } Connection;
+    Q_OBJECT
 
 private:
 
-    /* This function tries connecting to the RCC's MySQL database server*/
-    static Connection createConnection();
+    /**
+     * @brief tcpSocket
+     */
+    QTcpSocket* tcpSocket;
+
+    /**
+     * @brief userName
+     */
+    QString userName;
+
+    /**
+     * @brief score
+     */
+    QString score;
 
 public:
     /*The default constructor*/
     FBHelper();
 
     /* Save a record the database*/
-    static bool save(QString userName, int score);
+    void save(QString userName, int score);
+
+private slots:
+
+    /**
+     * @brief sendData
+     */
+    void sendData();
+
+    /**
+     * @brief processError
+     */
+    void processError();
 
 };
 

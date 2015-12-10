@@ -10,6 +10,8 @@ GODialog::GODialog(QWidget *parent) :
     ui(new Ui::GODialog)
 {
     ui->setupUi(this);
+
+    fbHelper = new FBHelper();
 }
 
 /**
@@ -62,11 +64,7 @@ void GODialog::on_sRestartButton_clicked()
 {
     hide();
 
-    if (FBHelper::save(ui->nameLineEdit->text(),ui->scoreDisplay->value())){
-        qDebug() << "The result was saved.";
-    }else{
-        qDebug() << "The result cannot be saved !";
-    }
+    fbHelper->save(ui->nameLineEdit->text(),ui->scoreDisplay->value());
 
     emit restart();
 }

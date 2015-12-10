@@ -1,31 +1,19 @@
 #include "fbhelper.h"
+#include <QtNetwork>
 
-/**
- * @brief FBHelper::createConnection
- */
-FBHelper::Connection FBHelper::createConnection()
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("209.129.8.2");
-    db.setDatabaseName("48941");
-    db.setUserName("48941");
-    db.setPassword("48941cis17b");
-    Connection connection;
-    connection.db = db;
-    if (!db.open()) {
-        connection.connected = false;
-        return connection;
-    }
-    connection.connected = true;
-
-    return connection;
-}
 
 /**
  * @brief FBHelper::FBHelper
  */
 FBHelper::FBHelper()
 {
+    tcpSocket = new QTcpSocket();
+
+    connect(tcpSocket, SIGNAL(connected()), this, SLOT(sendData()));
+    connect(tcpSocket, SIGNAL(disconnected()),
+            this, SLOT(processError()));
+    connect(tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)),
+            this, SLOT(processError()));
 
 }
 
@@ -35,23 +23,36 @@ FBHelper::FBHelper()
  * @param score
  * @return
  */
-bool FBHelper::save(QString userName, int score)
+void FBHelper::save(QString userName, int score)
 {
-    //Testing
 
+    this->userName = userName;
+    this->score = QString::number(score);
+    tcpSocket->connectToHost(QHostAddress::LocalHost, 6178);
 
-    //Testing
-    Connection connection = createConnection();
-    if ( !connection.connected ){
+}
 
-        return false;
-    }
+/**
+ * @brief FBHelper::sendData
+ */
+void FBHelper::sendData()
+{
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
 
-    QSqlQuery query;
-    query.exec("INSERT INTO FlappingBird (UserName, Score)"
-               "VALUES ('" + userName + "','"+ QString::number(score) +"')");
-    connection.db.close();
-    return true;
+    out << userName << score;
 
+    tcpSocket->write(block);
+    tcpSocket->close();
+
+}
+
+/**
+ * @brief FBHelper::processError
+ */
+void FBHelper::processError()
+{
+    qDebug() << tcpSocket->errorString();
+    tcpSocket->close();
 }
 
