@@ -147,7 +147,20 @@ void UIController::restart()
 {
     mainWindow->restartUI();
     isGameStarted = false;
- }
+}
+
+/**
+ * Reference to the function declaration
+ * @brief UIController::levelUp
+ */
+void UIController::levelUp()
+{
+    int crTimer = mFlowerTimer->interval();
+
+    if ((crTimer--) > 1){
+       mFlowerTimer->setInterval(crTimer);
+    }
+}
 
 /**
  * @brief UIController::connectSystems
@@ -166,6 +179,9 @@ void UIController::connectSystems()
 
     //Getting a notify from the main window for a collision
     connect(mainWindow,SIGNAL(processCollision()),this,SLOT(processCollision()));
+
+    //Register with the main window to receive a level-up signal
+    connect(mainWindow,SIGNAL(levelUp()),this,SLOT(levelUp()));
 
     //Register with the difficulty dialog to receive a start-game signal
     connect(dDialog,SIGNAL(startGame()),this,SLOT(startGame()));

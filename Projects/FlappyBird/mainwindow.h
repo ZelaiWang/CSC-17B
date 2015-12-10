@@ -18,6 +18,9 @@ private:
     /*Path to the score sound track*/
     const QString SCORE_S_FILE_NAME = "qrc:/SoundTracks/Score.mp3";
 
+    /*The number of flowers the player has to pass to be leveled up*/
+    const int NUMBER_OF_FLOWERS_PER_LEVEL = 10;
+
     /*Main UI*/
     Ui::MainWindow *ui;
 
@@ -50,6 +53,9 @@ signals:
 
     /*This function is called when the bird collides with a flower*/
     void processCollision();
+
+    /*This function is called when the bird passed NUMBER_OF_FLOWERS_PER_LEVEL flowers*/
+    void levelUp();
 
 public slots:
 

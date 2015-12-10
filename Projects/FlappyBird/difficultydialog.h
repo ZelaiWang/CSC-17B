@@ -22,6 +22,11 @@ public:
     //The main destructor
     ~DifficultyDialog();
 
+protected:
+
+    //Handling the default close button of this dialog
+    virtual void closeEvent(QCloseEvent*);
+
 signals:
     //The start-game signal
     void startGame();

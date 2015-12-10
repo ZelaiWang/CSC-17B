@@ -31,6 +31,14 @@ void GODialog::populateUI(int score)
 }
 
 /**
+ * @brief GODialog::closeEvent
+ */
+void GODialog::closeEvent(QCloseEvent *)
+{
+    exit(EXIT_SUCCESS);
+}
+
+/**
  * @brief GODialog::on_quitButton_clicked
  */
 void GODialog::on_quitButton_clicked()

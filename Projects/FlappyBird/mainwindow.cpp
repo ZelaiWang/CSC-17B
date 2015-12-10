@@ -73,6 +73,10 @@ void MainWindow::updateScore()
     ui->lcdScore->display(++crScore);
 
     scoreMs->play();
+
+    if ((crScore%NUMBER_OF_FLOWERS_PER_LEVEL) == 0){
+        emit levelUp();
+    }
 }
 
 /*Reference to the function declaration*/

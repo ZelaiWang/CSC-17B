@@ -24,6 +24,14 @@ DifficultyDialog::~DifficultyDialog()
     delete ui;
 }
 
+/**
+ * @brief DifficultyDialog::closeEvent
+ */
+void DifficultyDialog::closeEvent(QCloseEvent *)
+{
+    exit(EXIT_SUCCESS);
+}
+
 
 /**
  * @brief DifficultyDialog::on_startButton_clicked

@@ -29,6 +29,11 @@ public:
     //This function pupolate the UI with the final score
     void populateUI(int score);
 
+protected:
+
+    //Handling the default close button of this dialog
+    virtual void closeEvent(QCloseEvent*);
+
 signals:
 
     //Start a new game

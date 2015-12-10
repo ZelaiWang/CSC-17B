@@ -87,6 +87,9 @@ public slots:
     /*This function is called after the user has chosen to restart the game */
     void restart();
 
+    /*This function handles the level-up event from the main window*/
+    void levelUp();
+
 private:
 
     /*Connect all the subsystems to this UI controller*/
