@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
     quitButton.setWindowTitle("Flapping Bird Server");
     QObject::connect(&quitButton, SIGNAL(clicked()),
                      &a, SLOT(quit()));
+    quitButton.setMinimumWidth(500);
+    quitButton.setMinimumHeight(250);
     quitButton.show();
 
     return a.exec();
