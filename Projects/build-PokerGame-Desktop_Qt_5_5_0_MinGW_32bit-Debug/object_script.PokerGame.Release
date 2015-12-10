@@ -7,10 +7,12 @@ INPUT(
 ./release/pokerpushbutton.o
 ./release/pokercardtable.o
 ./release/bankroll.o
+./release/pokerclient.o
 ./release/qrc_images.o
 ./release/qrc_soundtracks.o
 ./release/moc_mainwindow.o
 ./release/moc_uicontroller.o
 ./release/moc_pokerpushbutton.o
 ./release/moc_bankroll.o
+./release/moc_pokerclient.o
 );
