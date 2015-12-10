@@ -4,6 +4,7 @@
 #include <QSql>
 #include <QSqlQuery>
 #include <QSqlDatabase>
+#include <QTcpSocket>
 
 /*The Flapping Bird Helper class*/
 class FBHelper

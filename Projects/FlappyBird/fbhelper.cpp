@@ -37,6 +37,10 @@ FBHelper::FBHelper()
  */
 bool FBHelper::save(QString userName, int score)
 {
+    //Testing
+
+
+    //Testing
     Connection connection = createConnection();
     if ( !connection.connected ){
 
