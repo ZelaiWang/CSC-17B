@@ -31,7 +31,7 @@ private:
     /*The play button*/
     PokerPushButton* playBtn = NULL;
 
-    /*The play button*/
+    /*The replace button*/
     PokerPushButton* dealBtn = NULL;
 
 public:
