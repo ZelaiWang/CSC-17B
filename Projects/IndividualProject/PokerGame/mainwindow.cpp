@@ -81,7 +81,9 @@ void MainWindow::restartUI()
     mainScene->displayCards(emptyId,false);
 
     //Hide the deal button from the main window
-    dealBtn->setVisible(false);
+    if (dealBtn != NULL){
+        dealBtn->setVisible(false);
+    }
 
     //Place the Play button on the window
     addPlayButton();

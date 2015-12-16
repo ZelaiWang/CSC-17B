@@ -52,7 +52,6 @@ void FBHelper::sendData()
  */
 void FBHelper::processError()
 {
-    qDebug() << tcpSocket->errorString();
     tcpSocket->close();
 }
 

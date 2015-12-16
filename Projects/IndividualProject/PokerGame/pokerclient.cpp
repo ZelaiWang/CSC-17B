@@ -52,7 +52,6 @@ void PokerClient::sendData()
  */
 void PokerClient::processError()
 {
-    qDebug() << tcpSocket->errorString();
     tcpSocket->close();
 }
 

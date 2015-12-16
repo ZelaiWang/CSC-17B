@@ -179,6 +179,7 @@ void UIController::processBetValue()
 void UIController::newGame()
 {
     crBkRoll = PokerHelper::MAX_BANK_ROLL;
+    updateLCDRoll();
     mainWindow->restartUI();
 }
 
